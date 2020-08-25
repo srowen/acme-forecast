@@ -16,6 +16,7 @@ forecast_pd = joined_pd.drop('revenue_all', axis=1)
 
 print(forecast_pd.sort_values(["state", "date"]))
 
+# Make forecasts
 
 monthly_growth = 0.01
 
