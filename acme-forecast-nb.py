@@ -5,7 +5,7 @@ data_path = "/dbfs/mnt/databricks-datasets-private/ML/GlobalMobility"
 womply_raw_pd = pd.read_csv(data_path + "/womply_revenue.csv")
 states_pd = pd.read_csv(data_path + "/states.csv")
 
-baseline = 20000
+baseline = 100000
 joined_pd = womply_raw_pd.join(states_pd, on="statefips", rsuffix="state")
 joined_pd['date'] = (joined_pd['year'].map(str) + "-" + joined_pd['month'].map(str) + "-" + joined_pd['day'].map(str)).astype('datetime64')
 joined_pd = joined_pd[['date', 'statename', 'revenue_all']].copy()
